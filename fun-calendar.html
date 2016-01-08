@@ -2,13 +2,15 @@
   <thead>
     <tr>
       <th>Team Member</th>
-      <th data-ng-repeat="week in fun.weeks">{{week}}</th>
+      <th data-ng-repeat="week in funController.weeks">{{week}}</th>
     </tr>
   </thead>
   <tbody>
-    <tr data-ng-repeat="member in fun.members">
+    <tr data-ng-repeat="member in funController.members">
       <td>{{member}}</td>
-      <td data-ng-repeat="week in fun.weeks">{{fun.funFor(member, week)}}</td>
+      <td data-ng-repeat="week in funController.weeks">
+        <input data-ng-model="funController.funFor[week]">
+      </td>
     </tr>
   </tbody>
 </table>

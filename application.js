@@ -8,12 +8,13 @@ app.directive(
       restrict: 'A',
       controller: function() {
         this.members = ['Joel'];
-        this.weeks = ['Today'];
+        this.weeks = [1];
 
-        this.funFor = function(developer, week) {
-          return 7;
-        }
+        this.funFor = [0,7];
+//        this.funFor = function(developer, week) {
+//          return 7;
+//        }
       },
-      controllerAs: 'fun'
+      controllerAs: 'funController'
     }
   });
