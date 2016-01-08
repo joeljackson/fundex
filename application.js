@@ -36,7 +36,7 @@ app.service('funService', function(memberService, weekService, $firebaseObject){
     var funDb = new Firebase("https://fundex.firebaseio.com");
 
     return _.object(_(memberService.members()).map(function(member){
-             return [member, $firebaseObject(funDb.child('funAmounts').child(member))];
+             [member, $firebaseObject(funDb.child('funAmounts').child(member))];
            }));
   }
 
