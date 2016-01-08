@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Team Member</th>
+      <th data-ng-repeat="week in fun.weeks">{{week}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="member in fun.members">
+      <td>{{member}}</td>
+      <td data-ng-repeat="week in fun.weeks">{{fun.funFor(member, week)}}</td>
+    </tr>
+  </tbody>
+</table>
