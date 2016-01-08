@@ -31,7 +31,13 @@ app.service('memberService', function($firebaseObject){
 
 app.service('weekService', function(){
   this.weeks = function(){
-    return [1 ];
+    var currentWeek = moment().week();
+    var weeks = [];
+    for(var i = 1; i <= currentWeek; i++){
+      weeks.push(i);
+    }
+    console.log(currentWeek);
+    return [1,2];
   };
 
   return this;
