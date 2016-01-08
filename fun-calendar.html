@@ -9,7 +9,7 @@
     <tr data-ng-repeat="member in funController.members">
       <td>{{member}}</td>
       <td data-ng-repeat="week in funController.weeks">
-        <input data-ng-model="funController.funFor[week]">
+        <input data-ng-model="funController.funFor[member][week]" type="number" data-ng-change="funController.funFor[member].$save()">
       </td>
     </tr>
   </tbody>
