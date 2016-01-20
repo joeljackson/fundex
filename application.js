@@ -14,6 +14,7 @@ app.directive(
         this.weeks = weekService.weeks();
         this.funFor = funService.funs();
         this.funForMember = funService.funForMember;
+        this.addMember = memberService.add_person;
       },
       controllerAs: 'funController'
     }
@@ -25,6 +26,10 @@ app.service('memberService', function($firebaseObject){
               return name && name[0] == '$'
               });
   };
+  this.add_person = function(name){
+    var funDb = new Firebase("https://fundex.firebaseio.com");
+    funDb.child('funAmounts').child(name).set({1:2});
+  }
 
   return this;
 });
