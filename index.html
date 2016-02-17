@@ -1,11 +1,47 @@
 <html>
   <head>
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
+    <script src='/handlebars-v4.0.5.js'></script>
+    <script src='http://momentjs.com/downloads/moment.min.js'></script>
     <script src="/application.js"></script>
-  </head>
+    <style>
+    table { border: 1px solid #ccc; width: 100%;}
+    th { text-align: left;  }
+    td { padding: 10px; }
+    thead th { border-bottom: 1px solid #888; }
+    tbody th { border-right: 1px solid blue; }
+    </style>
+  </head>  
   <body>
     <div>
       build things here
+      <div id='data'>
+
+      </div>
     </div>
+
+
+    <script id='table' type='text/handlebars'>
+    <table>
+      <thead>
+        <th>Name</th>
+      {{#each headers}}
+        <th>{{.}}</th>
+      {{/each}}
+      </thead>
+      <tbody>
+      {{#each rows}}
+        <tr>
+        <th>{{name}}</th>
+        {{#each scores}}
+          <td>
+          <input data-week='{{@key}}' data-user='{{../name}}' type='number' name='score' value='{{this}}' max=10 min=0/>
+          </td>
+        {{/each}}
+        </tr>
+      {{/each}}
+      </tbody>
+    </script>
   </body>
 </html>
